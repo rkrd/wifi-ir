@@ -37,3 +37,27 @@
 #define PAUSE 0x20DF5DA2UL
 #define REWIND 0x20DFF10EUL
 #define FORWARD 0x20DF718E
+
+#define LIST_CONTROLS \
+    X(VOL_UP) \
+    X(VOL_DOWN) \
+    X(MUTE) \
+    X(CHAN_UP) \
+    X(CHAN_DOWN) \
+    X(UP) \
+    X(LEFT) \
+    X(RIGHT) \
+    X(DOWN) \
+    X(OK) \
+    X(BACK) \
+    X(HOME) \
+    X(RED) \
+    X(GREEN) \
+    X(YELLOW) \
+    X(BLUE) \
+    X(PLAY) \
+    X(STOP) \
+    X(PAUSE) \
+    X(REWIND) \
+    X(FORWARD) \
+    X(POWER)
