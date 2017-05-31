@@ -18,8 +18,6 @@ void setup()
 void blink(void)
 {
     digitalWrite(2, LOW);
-    digitalWrite(2, LOW);
-    digitalWrite(2, LOW);
     delay(100);
     digitalWrite(2, HIGH);
 }
