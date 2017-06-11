@@ -6,3 +6,8 @@ codes.h contains all the ir codes to use. Add all codes that shall be used, in o
 Depends on https://github.com/markszabo/IRremoteESP8266.git
 
 Use https://github.com/plerup/makeEspArduino to build with make.
+
+
+Icons from: http://www.flaticon.com/
+
+![UI preview](html/preview.png?raw=true "Remote")
