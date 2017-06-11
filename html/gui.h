@@ -9,7 +9,15 @@ char head_html[] = R"=====(
         <meta name="apple-mobile-web-app-title" content="MinRic Remote">
         <meta name="viewport" content="minimal-ui, user-scalable=no">
 		<meta content="yes" name="apple-mobile-web-app-capable" />
-		<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+		<script>
+			// Source: https://gist.github.com/irae/1042167
+			(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone");
+
+			// Disable scrolling on page.
+			document.ontouchmove = function(event){
+				event.preventDefault();
+			}
+</script>
         <style>
 body {
 	width: auto;
