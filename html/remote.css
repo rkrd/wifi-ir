@@ -1,247 +1,226 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
 body {
-	width: auto;
-	height: auto;
-	background-color: #222937;	
+    background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0));
 }
-/*#gradient {
-	background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0));
-	height: 100%;
-	width: 100%;
-}*/
-#bar {
-	width: 100%;
-	border-bottom-style: solid;
-	border-color: rgba(255, 255, 255, .2);
+.container {
+    height: 100%;
 }
-#bar:nth-child(0) {
-	position: fixed;
-	top: 0px;
-	right: 0px;
+.gradient {
+    background-color: #222937;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
 }
-#bar:nth-child(4) {
-	position: fixed;
-	bottom: 330px;
-	right: 0px;
-	border-top-style: solid;
-	border-color: rgba(255, 255, 255, .2);
-}
-#bar:nth-child(5) {
-	position: fixed;
-	bottom: 165px;
-	right: 0px;
-}
-#bar:nth-child(6) {
-	position: fixed;
-	bottom: 0px;
-	right: 0px;
-}
-#bar table{
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-}
-#bar tr {
-	height: 165px;
-}
-#color {
-	width: 25%;
-}
-#color div {
-	width: 140px;
-	height: 34px;
-	margin: auto;
-	border-radius: 17px;
-	opacity: .8;
-}
-#red {
-	background-color: #FE3824; 
-}
-#green {
-	background-color: #44DB5E;
-}
-#yellow {
-	background-color: #FFCD00;
-}
-#blue {
-	background-color: #54C7FC;
+.smallbar {
+    border-bottom-style: solid;
+    border-color: rgba(255, 255, 255, .2);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.bigbar {
+    height: 50%;
+    border-bottom-style: solid;
+    border-color: rgba(255, 255, 255, .2);
+    display: flex;
+}
+
+.color-buttons {
+    margin: auto;
+}
+.color-buttons div {
+    width: 140px;
+    height: 34px;
+    border-radius: 17px;
+    opacity: .8;
+}
+.color-buttons td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#red {
+    background-color: #FE3824;
+}
+#green {
+    background-color: #44DB5E;
+}
+#yellow {
+    background-color: #FFCD00;
+}
+#blue {
+    background-color: #54C7FC;
+}
+
+#channels, #smart-area, #volume-area {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+#play-area {
+    margin-left: 20%;
+    margin-right: 15%;
+}
 #channel-left {
-	width: 20%;
+    width: 20%;
 }
 #channel-mid {
-	width: 60%;
+    width: 60%;
 }
 #channel-right {
-	width: 20%;
+    width: 20%;
 }
 #channel-left svg{
-	width: 55%;
-	margin: auto;
-	float: left;
+    width: 55%;
+    margin: auto;
+    float: left;
 }
 #channel-right svg{
-	width: 55%;
-	margin: auto;
-	float: right;
+    width: 55%;
+    margin: auto;
+    float: right;
 }
 #smart-left {
-	width: 20%;
+    width: 20%;
 }
 #smart-mid {
-	width: 60%;
-	align-content: center;
+    width: 60%;
+    align-content: center;
 }
 #smart-right {
-	width: 20%;
+    width: 20%;
 }
 #smart-left svg{
-	width: 50%;
-	margin: auto;
-	float: left;
+    width: 50%;
+    margin: auto;
+    float: left;
 }
 #smart-mid svg{
-	width: 20%;
-	margin: auto;
-	display: block;
+    width: 20%;
+    margin: auto;
+    display: block;
 
 }
 #smart-right svg{
-	width: 70%;
-	margin: auto;
-	float: right;
+    width: 70%;
+    margin: auto;
+    float: right;
 }
 #play-left {
-	width: 25%;
+    width: 25%;
 }
 #play-mid {
-	width: 25%;
-	align-content: center;
+    width: 25%;
+    align-content: center;
 }
 #play-mid2 {
-	width: 25%;
-	align-content: center;
+    width: 25%;
+    align-content: center;
 }
 #play-right {
-	width: 25%;
+    width: 25%;
 }
 #play-left svg{
-	width: 65%;
-	margin: auto;
-	float: left;
-	transform: rotate(180deg);
+    width: 65%;
+    transform: rotate(180deg);
 }
 #play-mid svg{
-	width: 60%;
-	margin: auto;
-	display: block;
+    width: 60%;
 }
 #play-mid2 svg{
-	width: 55%;
-	margin: auto;
-	display: block;
-	transform: rotate(90deg);
+    width: 55%;
+    transform: rotate(90deg);
 }
 #play-right svg{
-	width: 65%;
-	margin: auto;
-	float: right;
+    width: 65%;
 }
 .green-icons {
-	fill: #58B29A;
+    fill: #58B29A;
 }
 .white-icons {
-	fill: #FFF;
-	opacity: .8;
+    fill: #FFF;
+    opacity: .8;
 }
 h1 {
-	font-family: Helvetica;
-	text-transform:uppercase;
-	color:white;
-	opacity: .8;
-	font-weight: 300;
-	font-size: 3.2em;
-	text-align: center;
+    font-family: Helvetica;
+    text-transform:uppercase;
+    color:white;
+    opacity: .8;
+    font-weight: 300;
+    font-size: 3.2em;
+    text-align: center;
 }
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 h2 {
-	font-family: Helvetica;
-	text-transform:uppercase;
-	color:white;
-	font-weight: 500;
-	font-size: 3.6em;
-	text-align: center;
-}
-#remote-area {
-	position: fixed;
-	top: 345px;
-	bottom: 500px;
-	width: 100%;
-	/*background-color: rgba(255, 255,255, .2);*/
+    font-family: Helvetica;
+    text-transform:uppercase;
+    color:white;
+    font-weight: 500;
+    font-size: 3.6em;
+    text-align: center;
 }
 #on-area {
-	width: 70%;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	height: 525px;
-	/*background-color: blue;*/
+    width: 25%;
 }
 #power svg {
-	width: 100px;
-	float: right;
+    width: 100px;
+    float: left;
+    margin-top: 55%;
+}
+#arrow-empty {
+    width: 25%;
 }
 #arrow-area {
-	width: 525px;
-	height: 525px;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	border-radius: 50%;
-	border-style: solid;
-	border-color: rgba(255, 255, 255, .2);
+    width: 50vw;
+    height: 50vw;
+    margin: auto;
+
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, .2);
 }
 #arrows {
-	width: 100%;
-	height: 100%;	
+    width: 100%;
+    height: 100%;
 }
 #arrows tr {
-	height: 33%;
+    height: 33%;
 }
 #arrows svg {
-	width: 100px;
-	display: block;
+    width: 100px;
+    display: block;
 }
 #arrow-up svg {
-	transform: rotate(270deg);
-	margin: auto;
-}
-#arrow-on svg {
-	/*right: 0;
-	top: 0;
-	position: absolute;*/
-	margin: auto;
+    transform: rotate(270deg);
+    margin: 15% auto;
+
 }
 #arrow-left svg {
-	transform: rotate(180deg);
-	margin: auto;
+    transform: rotate(180deg);
+    margin: auto;
 }
 #arrow-ok {
-	border-radius: 100%;
-	background-color: #58B29A;
+    border-radius: 100%;
+    background-color: #58B29A;
 }
 #arrow-right svg {
-	margin: auto;
-}	
+    margin: auto;
+}
 #arrow-down svg {
-	transform: rotate(90deg);
-	margin: auto;
+    transform: rotate(90deg);
+    margin: auto;
 }
 #mute svg {
-	width: 100px;
-	display: block;
-	margin: auto;
+    width: 100px;
+    display: block;
+    margin: auto;
 }
 
