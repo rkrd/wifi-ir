@@ -15,6 +15,7 @@ void setup()
   irsend.begin();
   Serial.begin(115200, SERIAL_8N1, SERIAL_TX_ONLY);
   pinMode(2, OUTPUT);
+  WiFi.mode(WIFI_STA);
 }
 
 void blink(void)
