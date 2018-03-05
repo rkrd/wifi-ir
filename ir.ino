@@ -1,4 +1,5 @@
 #include <IRremoteESP8266.h>
+#include <IRsend.h>
 #include <ESP8266WiFi.h>
 #include "wifi.h"
 #include "codes.h"
@@ -60,7 +61,7 @@ void loop()
 
 LIST_CONTROLS
 #undef X
-    
+
 	// Add simple header so webapp is accepted.
 	client.print("HTTP/1.1 200 OK\r\n\
 		Server: espremote/0.0.1\r\n\
