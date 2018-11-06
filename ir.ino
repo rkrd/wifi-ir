@@ -5,7 +5,8 @@
 #include "codes.h"
 #include "html/gui.h"
 
-#define IR_SEND(BUTTON) do { irsend.sendLG(BUTTON, 32); blink(); } while(0)
+uint16_t bits = 32U;
+#define IR_SEND(BUTTON) do { irsend.sendNEC(BUTTON, bits); blink(); } while(0)
 
 IRsend irsend(4);
 WiFiServer server(80);
