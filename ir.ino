@@ -8,9 +8,27 @@
 uint16_t bits = 32U;
 #define IR_SEND(BUTTON) do { irsend.sendNEC(BUTTON, bits); blink(); } while(0)
 
+volatile unsigned long last_int = 0;
+volatile unsigned long tnow = 0;
+volatile int clapped = 0;
+volatile int count = 0;
+
 IRsend irsend(D2);
 WiFiServer server(80);
 char http_start[] = "<!DOCTYPE html> <html>\r\n";
+
+void ICACHE_RAM_ATTR clap_ISR()
+{
+    count++;
+    tnow = millis();
+    if (tnow - last_int >= 10000) {
+        last_int = tnow;
+    } else if (tnow - last_int <= 500) {
+        // Got knock with hystersis
+        clapped = 1;
+        last_int = tnow;
+    }
+}
 
 void setup()
 {
@@ -19,6 +37,8 @@ void setup()
     pinMode(D4, OUTPUT);
     pinMode(D3, INPUT);
     WiFi.mode(WIFI_STA);
+    attachInterrupt(digitalPinToInterrupt(D3), clap_ISR, CHANGE);
+    last_int = tnow = millis();
 }
 
 void blink(void)
@@ -46,10 +66,17 @@ void loop()
         }
     }
 
+    if (clapped) {
+        Serial.println("clap");
+        delay(1000);
+        IR_SEND(POWER);
+        clapped = 0;
+    }
+
     WiFiClient client = server.available();
     if (!client) {
         //Serial.println("No client");
-        delay(1);
+        delay(500);
         return;
     }
     
