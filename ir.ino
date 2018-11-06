@@ -8,23 +8,24 @@
 uint16_t bits = 32U;
 #define IR_SEND(BUTTON) do { irsend.sendNEC(BUTTON, bits); blink(); } while(0)
 
-IRsend irsend(4);
+IRsend irsend(D2);
 WiFiServer server(80);
 char http_start[] = "<!DOCTYPE html> <html>\r\n";
 
 void setup()
 {
-  irsend.begin();
-  Serial.begin(115200, SERIAL_8N1, SERIAL_TX_ONLY);
-  pinMode(2, OUTPUT);
-  WiFi.mode(WIFI_STA);
+    irsend.begin();
+    Serial.begin(115200, SERIAL_8N1, SERIAL_TX_ONLY);
+    pinMode(D4, OUTPUT);
+    pinMode(D3, INPUT);
+    WiFi.mode(WIFI_STA);
 }
 
 void blink(void)
 {
-    digitalWrite(2, LOW);
+    digitalWrite(D4, LOW);
     delay(100);
-    digitalWrite(2, HIGH);
+    digitalWrite(D4, HIGH);
 }
 
 void loop()
